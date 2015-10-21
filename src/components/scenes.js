@@ -11,8 +11,8 @@ var {
   Navigator,
 } = React;
 
-var ProjectView = require('./project/project');
-var IssuesView = require('./issues/issues');
+var ProjectList = require('./project/projectList/ProjectList');
+var IssuesList = require('./issues/issuesList/IssuesList');
 var _navigator;
 
 var NavToolbar = React.createClass({
@@ -52,7 +52,7 @@ var Scenes = React.createClass({
       return (
         <View style={{flex: 1}}>
           <NavToolbar title={route.id} navigator={navigator}/>
-          <ProjectView nav = {navigator} name = { route.name }/>
+          <ProjectList nav = {navigator} name = { route.name }/>
         </View>
       );
     }
@@ -61,7 +61,7 @@ var Scenes = React.createClass({
       return (
         <View style={{flex: 1}}>
           <NavToolbar title={route.id} enableBack={true} navigator={navigator}/>
-          <IssuesView project={route.project} nav={navigator}  />
+          <IssuesList project={route.project} nav={navigator}  />
         </View>
       )
     }
@@ -83,7 +83,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#F6F6EF',
   },
   toolbar: {
-    backgroundColor: '#FF6600',
+    backgroundColor: '#4E8EF7',
     height: 56,
   }
 });
