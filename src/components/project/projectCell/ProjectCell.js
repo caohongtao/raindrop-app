@@ -13,7 +13,7 @@ var styles = require("./style");
 
 var ProjectCell = React.createClass({
   render: function() {
-    var project = this.props.post;
+    var project = this.props.project;
     return (
       <TouchableHighlight onPress={this.props.onSelect}>
         <View style={styles.container}>

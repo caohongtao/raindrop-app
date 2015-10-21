@@ -1,7 +1,7 @@
 'use strict';
 const SERVER = 'http://www.yudianer.com/api';
 
-function getProjects(){
+function getProjectList(){
     return fetch(`${SERVER}/project`)
 		.then((response) => response.json())
 		.then((responseData) => {
@@ -10,8 +10,18 @@ function getProjects(){
 		});
 }
 
+function getIssuesList(projectId){
+    return fetch(`${SERVER}/project/${projectId}/issues`)
+		.then((response) => response.json())
+		.then((responseData) => {
+			console.info("加载议题完成：",responseData.data);
+			return responseData.data;
+		});
+}
+
 var DataService = {
-	'getProjects':getProjects,
+	'getProjectList':getProjectList,
+	'getIssuesList':getIssuesList,
 };
 
 module.exports = DataService

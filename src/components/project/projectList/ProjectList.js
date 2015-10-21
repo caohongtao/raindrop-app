@@ -15,7 +15,7 @@ var ProjectList = React.createClass({
   },
 
   componentDidMount: function() {
-    DataService.getProjects()
+    DataService.getProjectList()
       .then( responseData => {
         this.setState({
           dataSource: this.state.dataSource.cloneWithRows(responseData),
@@ -53,14 +53,14 @@ var ProjectList = React.createClass({
     return(
       <ProjectCell
         onSelect={() => this.selectProject(project)}
-        post={project}/>
+        project={project}/>
     );
   },
 
   selectProject: function(project) {
     this.props.nav.push({
       id: 'Issues',
-      passProps: {project: project},
+      project: project,
     });
   },
 });

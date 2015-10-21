@@ -61,7 +61,7 @@ var Scenes = React.createClass({
       return (
         <View style={{flex: 1}}>
           <NavToolbar title={route.id} enableBack={true} navigator={navigator}/>
-          <IssuesList project={route.project} nav={navigator}  />
+          <IssuesList nav={navigator} project={route.project} />
         </View>
       )
     }
