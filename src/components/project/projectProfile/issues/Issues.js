@@ -3,12 +3,12 @@
 var React = require('react-native');
 // var WebIntent = require('react-native-webintent');
 var { Text, View, ListView, TouchableHighlight, } = React;
-var DataService = require('../../../network/DataService');
-var NavToolbar = require('./navigation/navToolBar/NavToolBar')
-var IssuesCell = require('../issuesCell/IssuesCell');
+var DataService = require('../../../../network/DataService');
+var NavToolbar = require('../../../navigation/navToolBar/NavToolBar')
+var IssuesCell = require('../../../issues/issuesCell/IssuesCell');
 var styles = require('./style');
 
-var IssuesList = React.createClass({
+var Issues = React.createClass({
   getInitialState: function() {
     return {
       dataSource: new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2}),
@@ -32,7 +32,6 @@ var IssuesList = React.createClass({
     }
     return (
       <View>
-        <NavToolbar title={'议题'} navigator={this.props.nav}/>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderIssuesCell}
@@ -75,4 +74,4 @@ var IssuesList = React.createClass({
   },
 });
 
-module.exports = IssuesList;
+module.exports = Issues;

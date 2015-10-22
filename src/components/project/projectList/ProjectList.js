@@ -3,7 +3,8 @@
 var React = require('react-native');
 var { Text, View, ListView,} = React;
 var DataService = require('../../../network/DataService');
-var ProjectCell = require('../projectCell/ProjectCell');
+var NavToolbar = require('../../navigation/navToolBar/NavToolBar')
+var ProjectCell = require('./projectCell/ProjectCell');
 var styles = require("./style");
 
 var ProjectList = React.createClass({
@@ -42,10 +43,13 @@ var ProjectList = React.createClass({
 
   renderProjectList: function(){
     return(
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderProject}
-        style={styles.projectListView}/>
+      <View>
+        <NavToolbar title={'项目'} navigator={this.props.navigator} />
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderProject}
+          style={styles.projectListView}/>
+      </View>
     );
   },
 
@@ -58,8 +62,8 @@ var ProjectList = React.createClass({
   },
 
   selectProject: function(project) {
-    this.props.nav.push({
-      id: 'Issues',
+    this.props.navigator.push({
+      id: 'ProjectProfile',
       project: project,
     });
   },

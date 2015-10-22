@@ -1,40 +1,13 @@
 'use strict';
 
 var React = require('react-native');
-var {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  BackAndroid,
-  ToolbarAndroid,
-  Navigator,
-} = React;
-
+var { AppRegistry, View, BackAndroid, Navigator, } = React;
 var ProjectList = require('./project/projectList/ProjectList');
-var IssuesList = require('./issues/issuesList/IssuesList');
+var ProjectProfile = require('./project/projectProfile/ProjectProfile');
+// var IssuesList = require('./issues/issuesList/IssuesList');
+
+
 var _navigator;
-
-var NavToolbar = React.createClass({
-
-  componentWillMount: function() {
-    var navigator = this.props.navigator;
-  },
-
-  render: function () {
-    var title = this.props.title;
-    var navIcon = this.props.enableBack ? {uri: "ic_arrow_back_white_24dp", isStatic: true} : null;
-
-    return (
-      <ToolbarAndroid
-        style={styles.toolbar}
-        navIcon={navIcon}
-        onIconClicked={this.props.navigator.pop}
-        titleColor="#ffffff"
-        title={title} />
-    )
-  }
-})
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
   if (_navigator.getCurrentRoutes().length === 1  ) {
@@ -45,23 +18,23 @@ BackAndroid.addEventListener('hardwareBackPress', () => {
 });
 
 var Scenes = React.createClass({
-
   renderScene: function(route, navigator) {
+
+    console.info("当前路由：", navigator.getCurrentRoutes());
     _navigator = navigator;
-    if (route.id === 'Project') {
+    if (route.id === 'ProjectList') {
       return (
         <View style={{flex: 1}}>
-          <NavToolbar title={route.id} navigator={navigator}/>
-          <ProjectList nav = {navigator} name = { route.name }/>
+
+          <ProjectList navigator={navigator} name={ route.name }/>
         </View>
       );
     }
     
-    if (route.id === 'Issues') {
+    if (route.id === 'ProjectProfile') {
       return (
         <View style={{flex: 1}}>
-          <NavToolbar title={route.id} enableBack={true} navigator={navigator}/>
-          <IssuesList nav={navigator} project={route.project} />
+          <ProjectProfile navigator={navigator} project={route.project} />
         </View>
       )
     }
@@ -69,25 +42,12 @@ var Scenes = React.createClass({
   render: function() {
     return (
       <Navigator
-        initialRoute = {{id: 'Project'}}
+        initialRoute = {{id: 'ProjectList'}}
         configureScene={() => Navigator.SceneConfigs.FadeAndroid}
         renderScene={this.renderScene}
       />
     );
   },
 });
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F6F6EF',
-  },
-  toolbar: {
-    backgroundColor: '#4E8EF7',
-    height: 56,
-  }
-});
-
-AppRegistry.registerComponent('Scenes', () => Scenes);
 
 module.exports = Scenes;
