@@ -4,7 +4,7 @@ var React = require('react-native');
 // var WebIntent = require('react-native-webintent');
 var { Text, View, ListView, TouchableHighlight, } = React;
 var DataService = require('../../../network/DataService');
-var NavToolbar = require('./navigation/navToolBar/NavToolBar')
+var NavToolbar = require('../../navigation/navToolBar/NavToolBar')
 var IssuesCell = require('../issuesCell/IssuesCell');
 var styles = require('./style');
 

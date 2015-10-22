@@ -2,90 +2,42 @@
 
 var React = require('react-native');
 var {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
-  BackAndroid,
-  ToolbarAndroid,
-  Navigator,
+  Image,
+  DrawerLayoutAndroid,
+  Dimensions,
 } = React;
 
-var ProjectList = require('./project/projectList/ProjectList');
-var IssuesList = require('./issues/issuesList/IssuesList');
-var _navigator;
+const DRAWER_WIDTH_LEFT = 60;
 
-var NavToolbar = React.createClass({
+var NavTab = React.createClass({
+  renderNavigationView: function() {
+    return (
+      <View style={{flex: 1, backgroundColor: '#fff'}}>
 
-  componentWillMount: function() {
-    var navigator = this.props.navigator;
+        <Image style={{width: 100, height: 100}} source={require('image!ic_drawer_backgroud_green')} />
+        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
+      </View>
+    )
   },
 
   render: function () {
-    var title = this.props.title;
-    var navIcon = this.props.enableBack ? {uri: "ic_arrow_back_white_24dp", isStatic: true} : null;
-
     return (
-      <ToolbarAndroid
-        style={styles.toolbar}
-        navIcon={navIcon}
-        onIconClicked={this.props.navigator.pop}
-        titleColor="#ffffff"
-        title={title} />
-    )
-  }
-})
-
-BackAndroid.addEventListener('hardwareBackPress', () => {
-  if (_navigator.getCurrentRoutes().length === 1  ) {
-     return false;
-  }
-  _navigator.pop();
-  return true;
-});
-
-var Navigation = React.createClass({
-
-  renderScene: function(route, navigator) {
-    _navigator = navigator;
-    if (route.id === 'Project') {
-      return (
-        <View style={{flex: 1}}>
-          <NavToolbar title={route.id} navigator={navigator}/>
-          <ProjectList nav = {navigator} name = { route.name }/>
+      <DrawerLayoutAndroid
+        ref={'navTab'}
+        drawerWidth={Dimensions.get('window').width - DRAWER_WIDTH_LEFT}
+        keyboardDismissMode="on-drag"
+        drawerPosition={DrawerLayoutAndroid.positions.Left}
+        renderNavigationView={this.renderNavigationView}>
+        <View>
+          {this.props.children}
         </View>
-      );
-    }
-    
-    if (route.id === 'Issues') {
-      return (
-        <View style={{flex: 1}}>
-          <NavToolbar title={route.id} enableBack={true} navigator={navigator}/>
-          <IssuesList nav={navigator} project={route.project} />
-        </View>
-      )
-    }
-  },
-  render: function() {
-    return (
-      <Navigator
-        initialRoute = {{id: 'Project'}}
-        configureScene={() => Navigator.SceneConfigs.FadeAndroid}
-        renderScene={this.renderScene}
-      />
+      </DrawerLayoutAndroid>
     );
-  },
-});
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F6F6EF',
-  },
-  toolbar: {
-    backgroundColor: '#4E8EF7',
-    height: 56,
   }
 });
 
-module.exports = Navigation;
+
+module.exports = NavTab;
