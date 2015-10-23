@@ -3,7 +3,8 @@
 var React = require('react-native');
 var { Text, View, ListView,} = React;
 var DataService = require('../../../network/DataService');
-var NavToolbar = require('../../navigation/navToolBar/NavToolBar')
+var NavTab = require('../../navigation/navTab/NavTab')
+var NavToolbar = require('../../navigation/navToolBar/NavToolBar');
 var ProjectCell = require('./projectCell/ProjectCell');
 var styles = require("./style");
 
@@ -43,13 +44,14 @@ var ProjectList = React.createClass({
 
   renderProjectList: function(){
     return(
-      <View>
+      // important：NavTab外面不能包其他标签，因为其用了DrawerLayoutAndroid, DrawerLayoutAndroid外有别的标签会不显示，且没有任何提示。
+      <NavTab>
         <NavToolbar title={'项目'} navigator={this.props.navigator} />
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderProject}
           style={styles.projectListView}/>
-      </View>
+      </NavTab>
     );
   },
 
