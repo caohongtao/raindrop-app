@@ -32,7 +32,7 @@ var IssuesList = React.createClass({
     }
     return (
       <View>
-        <NavToolbar title={'议题'} navigator={this.props.nav}/>
+        <NavToolbar title={'议题'} nav={this.props.nav}/>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderIssuesCell}

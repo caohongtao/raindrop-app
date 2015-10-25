@@ -25,8 +25,7 @@ var Scenes = React.createClass({
     if (route.id === 'ProjectList') {
       return (
         <View style={{flex: 1}}>
-
-          <ProjectList navigator={navigator} name={ route.name }/>
+          <ProjectList nav={navigator} />
         </View>
       );
     }
@@ -34,7 +33,7 @@ var Scenes = React.createClass({
     if (route.id === 'ProjectProfile') {
       return (
         <View style={{flex: 1}}>
-          <ProjectProfile navigator={navigator} project={route.project} />
+          <ProjectProfile nav={navigator} project={route.project} />
         </View>
       )
     }

@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var { Text, View, ListView,} = React;
+var { Text, View, ListView, } = React;
 var DataService = require('../../../network/DataService');
 var NavTab = require('../../navigation/navTab/NavTab')
 var NavToolbar = require('../../navigation/navToolBar/NavToolBar');
@@ -27,6 +27,11 @@ var ProjectList = React.createClass({
       .done();
   },
 
+  onToolbarClicked:  function (){
+    // important：需要调用子控件中导出的方法，可以通过ref，去调用。
+    this.refs['navTab'].openNavDrawer();
+  },
+
   render: function() {
     if(!this.state.loaded){
       return (
@@ -38,19 +43,14 @@ var ProjectList = React.createClass({
       );
     }
     return (
-      this.renderProjectList()
-    );
-  },
-
-  renderProjectList: function(){
-    return(
       // important：NavTab外面不能包其他标签，因为其用了DrawerLayoutAndroid, DrawerLayoutAndroid外有别的标签会不显示，且没有任何提示。
-      <NavTab>
-        <NavToolbar title={'项目'} navigator={this.props.navigator} />
+      // important：ListView不能滚动。如果ListView包在一个View中，那么外面这个View需要设置style={flex: 1}。
+      <NavTab ref='navTab'>
+        <NavToolbar icon={"ic_menu_white"} title={'项目'} onClicked={this.onToolbarClicked} />
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderProject}
-          style={styles.projectListView}/>
+          style={styles.projectListView} />
       </NavTab>
     );
   },
@@ -64,10 +64,11 @@ var ProjectList = React.createClass({
   },
 
   selectProject: function(project) {
-    this.props.navigator.push({
+    this.props.nav.push({
       id: 'ProjectProfile',
       project: project,
     });
   },
 });
+
 module.exports = ProjectList;

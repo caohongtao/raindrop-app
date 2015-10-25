@@ -23,15 +23,19 @@ var NavTab = React.createClass({
     )
   },
 
+  openNavDrawer: function () {
+    this.refs['drawer'].openDrawer();
+  },
+
   render: function () {
     return (
       <DrawerLayoutAndroid
-        ref={'navTab'}
+        ref={'drawer'}
         drawerWidth={Dimensions.get('window').width - DRAWER_WIDTH_LEFT}
         keyboardDismissMode="on-drag"
         drawerPosition={DrawerLayoutAndroid.positions.Left}
         renderNavigationView={this.renderNavigationView}>
-        <View>
+        <View style={{flex: 1}}>
           {this.props.children}
         </View>
       </DrawerLayoutAndroid>

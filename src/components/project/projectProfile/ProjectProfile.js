@@ -11,7 +11,7 @@ var ProjectProfile = React.createClass({
   	var project = this.props.project;
     return (
       <View>
-        <NavToolbar enableBack={true} title={project.name} navigator={this.props.navigator} />
+        <NavToolbar enableBack={true} title={project.name} nav={this.props.nav} />
         <Issues project={project} />
       </View>
     );
