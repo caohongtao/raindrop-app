@@ -17,6 +17,8 @@ module.exports = StyleSheet.create({
   userInfo: {
     flex:1,
     flexDirection:'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     height:120,
     marginBottom:10,
     backgroundColor:'#4E8EF7',
@@ -27,7 +29,7 @@ module.exports = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     padding:20,
-  }
+  },
   separator: {
     height: 0.5,
     backgroundColor: '#CCCCCC',

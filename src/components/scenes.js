@@ -37,6 +37,22 @@ var Scenes = React.createClass({
         </View>
       )
     }
+
+    if (route.id === 'IssuseList') {
+      return (
+        <View style={{flex: 1}}>
+          <ProjectList nav={navigator} />
+        </View>
+      );
+    }
+
+    if (route.id === 'Login') {
+      return (
+        <View style={{flex: 1}}>
+          <ProjectProfile nav={navigator} project={route.project} />
+        </View>
+      )
+    }
   },
   render: function() {
     return (

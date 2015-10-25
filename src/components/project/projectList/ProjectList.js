@@ -45,7 +45,7 @@ var ProjectList = React.createClass({
     return (
       // important：NavTab外面不能包其他标签，因为其用了DrawerLayoutAndroid, DrawerLayoutAndroid外有别的标签会不显示，且没有任何提示。
       // important：ListView不能滚动。如果ListView包在一个View中，那么外面这个View需要设置style={flex: 1}。
-      <NavTab ref='navTab'>
+      <NavTab ref='navTab' nav={this.props.nav}>
         <NavToolbar icon={"ic_menu_white"} title={'项目'} onClicked={this.onToolbarClicked} />
         <ListView
           dataSource={this.state.dataSource}
