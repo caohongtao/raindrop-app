@@ -14,7 +14,7 @@ var {
 var { Icon, } = require('react-native-icons');
 var styles = require("./style");
 
-const DRAWER_WIDTH_LEFT = 60;
+var DRAWER_WIDTH_LEFT = 60;
 
 var NavTab = React.createClass({
   getInitialState: function() {

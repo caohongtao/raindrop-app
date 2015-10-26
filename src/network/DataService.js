@@ -1,5 +1,5 @@
 'use strict';
-const SERVER = 'http://www.yudianer.com/api';
+var SERVER = 'http://www.yudianer.com/api';
 
 function getProjectList(){
     return fetch(`${SERVER}/project`)
