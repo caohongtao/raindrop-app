@@ -33,10 +33,16 @@ var IssuesList = React.createClass({
   },
 
   render: function() {
+    var content = (
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderIssuesCell}
+        style={styles.projectListView} />
+    );
     if(!this.state.loaded){
-      return(
-        <View style={styles.container}>
-          <Text style={styles.loadingText}>
+      content = (
+        <View style={styles.loading}>
+          <Text >
             载入议题中...
           </Text>
         </View>
@@ -45,10 +51,7 @@ var IssuesList = React.createClass({
     return (
       <NavTab ref='navTab' nav={this.props.nav}>
         <NavToolbar icon={"ic_menu_white"} title={'议题'} onClicked={this.onToolbarClicked} />
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderIssuesCell}
-          style={styles.projectListView} />
+        {content}
       </NavTab>
     );
   },

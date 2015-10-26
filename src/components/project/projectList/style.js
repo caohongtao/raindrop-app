@@ -8,17 +8,14 @@ var {
 
 module.exports = StyleSheet.create({
   container: {
-    backgroundColor: '#F6F6EF',
+    backgroundColor: '#FFF',
   },
-  loadingText: {
-    fontSize: 25,
-    textAlign: 'center',
-    marginTop: 10,
-    marginBottom: 10,
-    marginRight: 10,
-    color: '#FF6600'
+  loading:{
+    flex:1,
+    justifyContent:'center',
+    alignItems: 'center',
   },
   projectListView:{
-    backgroundColor: '#F6F6EF',
+    backgroundColor: '#FFF',
   }
 });

@@ -12,10 +12,10 @@ module.exports = StyleSheet.create({
     backgroundColor: '#F6F6EF',
     flexDirection: 'column',
   },
-  loadingText:{
-    color: '#FF6600',
-    marginTop: 5,
-    fontSize: 15,
+  loading:{
+    flex:1,
+    justifyContent:'center',
+    alignItems: 'center',
   },
   issuesCell: {
     flex: 1,

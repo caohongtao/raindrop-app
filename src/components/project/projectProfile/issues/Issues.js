@@ -30,46 +30,18 @@ var Issues = React.createClass({
       );
     }
     return (
-      <View>
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderIssuesCell}
-          renderHeader={this.renderIssuessHeader}
-          style={styles.issuesListView}/>
-      </View>
-    );
-  },
-  renderIssuessHeader: function(){
-    if(!this.state.loaded){
-      return(<View/>
-      );
-    }
-
-    var project = this.props.project;
-    return(
-      <View style={styles.container}>
-        <View style={styles.head}>
-          <Text style={styles.title}>
-            {project.title}
-          </Text>
-          <Text style={styles.text}>
-            {project.slogan}
-          </Text>
-          <Text style={styles.postDetailsLine}>
-            Created by {project.owner.username} | {project.stars} 关注
-          </Text>
-          <View style={styles.separator}/>
-          <Text style={styles.issuesTitle}>{project.issues} 议题:</Text>
-        </View>
-      </View>
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderIssuesCell}
+        style={styles.issuesListView}/>
     );
   },
   renderIssuesCell: function(issues){
     return(
       <View style={styles.issuesCell}>
-          <Text style={styles.issuesTitle}>
-            {issues.title}
-          </Text>
+        <Text style={styles.issuesTitle}>
+          {issues.title}
+        </Text>
       </View>
     );
   },

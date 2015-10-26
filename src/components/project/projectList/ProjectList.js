@@ -33,10 +33,17 @@ var ProjectList = React.createClass({
   },
 
   render: function() {
+    var content = (
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderProject}
+        style={styles.projectListView} />
+    );
+
     if(!this.state.loaded){
-      return (
-        <View style={styles.container}>
-          <Text style={styles.loadingText}>
+      content = (
+        <View style={styles.loading}>
+          <Text>
             载入项目中...
           </Text>
         </View>
@@ -47,10 +54,7 @@ var ProjectList = React.createClass({
       // important：ListView不能滚动。如果ListView包在一个View中，那么外面这个View需要设置style={flex: 1}。
       <NavTab ref='navTab' nav={this.props.nav}>
         <NavToolbar icon={"ic_menu_white"} title={'项目'} onClicked={this.onToolbarClicked} />
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderProject}
-          style={styles.projectListView} />
+        {content}
       </NavTab>
     );
   },
