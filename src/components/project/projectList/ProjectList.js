@@ -3,7 +3,7 @@
 var React = require('react-native');
 var { Text, View, ListView, } = React;
 var DataService = require('../../../network/DataService');
-var NavTab = require('../../navigation/navTab/NavTab')
+var NavTab = require('../../navigation/navTab/NavTab');
 var NavToolbar = require('../../navigation/navToolBar/NavToolBar');
 var ProjectCell = require('./projectCell/ProjectCell');
 var styles = require("./style");
@@ -37,9 +37,9 @@ var ProjectList = React.createClass({
       return (
         <View style={styles.container}>
           <Text style={styles.loadingText}>
-            Fetching Posts...
+            载入项目中...
           </Text>
-      </View>
+        </View>
       );
     }
     return (

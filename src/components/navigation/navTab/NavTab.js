@@ -21,8 +21,8 @@ var NavTab = React.createClass({
     var nav = this.props.nav;
 
     var navItems=[
-      {title:"项目", icon:'fontawesome|book',     onSelect:()=>{nav.popToTop(); nav.push({id: 'ProjectList'});} },
-      {title:"议题", icon:'fontawesome|bookmark', onSelect:()=>{nav.popToTop(); nav.push({id: 'IssuesList'});}  },
+      {title:"项目", icon:'fontawesome|book',     onSelect:()=>{nav.popToTop(); nav.replace({id: 'ProjectList'});} },
+      {title:"议题", icon:'fontawesome|bookmark', onSelect:()=>{nav.popToTop(); nav.replace({id: 'IssuesList'});}  },
       {title:"博客", icon:'fontawesome|rss',      onSelect:()=>{}},
       {title:"设置", icon:'fontawesome|cog',      onSelect:()=>{}},
     ];
@@ -45,7 +45,7 @@ var NavTab = React.createClass({
         />
 
         <TouchableNativeFeedback
-          onPress={()=>{nav.push({id: 'Login'});}}
+          onPress={()=>{this.props.nav.push({id: 'Login'});}}
           background={TouchableNativeFeedback.SelectableBackground()}>
           <View>
             <Text style={{ margin: 10, fontSize: 15, textAlign: 'left', color:'#fff'}}>请登录</Text>

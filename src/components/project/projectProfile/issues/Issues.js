@@ -5,7 +5,6 @@ var React = require('react-native');
 var { Text, View, ListView, TouchableHighlight, } = React;
 var DataService = require('../../../../network/DataService');
 var NavToolbar = require('../../../navigation/navToolBar/NavToolBar')
-var IssuesCell = require('../../../issues/issuesCell/IssuesCell');
 var styles = require('./style');
 
 var Issues = React.createClass({
@@ -16,7 +15,7 @@ var Issues = React.createClass({
     };
   },
   componentDidMount: function() {
-    DataService.getIssuesList(this.props.project.id)
+    DataService.getProjectIssuesList(this.props.project.id)
       .then((data) => {
         this.setState({
           dataSource: this.state.dataSource.cloneWithRows(data),
@@ -67,8 +66,10 @@ var Issues = React.createClass({
   },
   renderIssuesCell: function(issues){
     return(
-      <View>
-        <IssuesCell issues={issues} />
+      <View style={styles.issuesCell}>
+          <Text style={styles.issuesTitle}>
+            {issues.title}
+          </Text>
       </View>
     );
   },

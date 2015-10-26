@@ -45,8 +45,4 @@ module.exports = StyleSheet.create({
     marginBottom: 10,
     color: 'gray',
   },
-  separator: {
-    height: 0.5,
-    backgroundColor: '#CCCCCC',
-  },
 });

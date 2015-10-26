@@ -30,7 +30,7 @@ module.exports = StyleSheet.create({
   text:{
     fontSize: 14,
     marginBottom: 3,
-},
+  },
   source:{
     fontSize: 15,
     textAlign: 'left',
@@ -59,9 +59,21 @@ module.exports = StyleSheet.create({
     padding: 0,
     backgroundColor: '#F6F6EF',
   },
-  postDetailsLine: {
-    fontSize: 12,
-    marginBottom: 10,
-    color: 'gray',
+  issuesCell: {
+    flexDirection: 'column',
+    borderWidth: 0.5,
+    borderColor: 'gray',
+    borderRadius: 5,
+    marginLeft:10,
+    marginRight:10,
+    marginTop:5,
+    padding:10,
   },
+  issuesTitle: {
+    fontSize: 13,
+    marginBottom: 3,
+    textAlign: 'left',
+    color: '#FF6600'
+  },
+
 });

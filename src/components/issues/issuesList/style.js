@@ -12,56 +12,41 @@ module.exports = StyleSheet.create({
     backgroundColor: '#F6F6EF',
     flexDirection: 'column',
   },
-  head: {
-    marginLeft:10,
-    marginRight:10,
-    marginBottom:5,
-  },
-  foot: {
-    flex:2
-  },
-  title:{
-    fontSize: 20,
-    textAlign: 'left',
-    marginTop: 10,
-    marginBottom: 10,
-    color: '#FF6600',
-  },
-  text:{
-    fontSize: 14,
-    marginBottom: 3,
-},
-  source:{
-    fontSize: 15,
-    textAlign: 'left',
-    color: '#0089FF',
-  },
-  separator: {
-    height: 0.5,
-    backgroundColor: '#CCCCCC',
-  },
   loadingText:{
     color: '#FF6600',
     marginTop: 5,
     fontSize: 15,
   },
-  issuesTitle: {
-    marginTop: 10,
-    color: 'gray',
+  issuesCell: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    margin: 10,
+    marginVertical: 5,
+    borderColor: '#dddddd',
+    borderStyle: null,
+    borderWidth: 0.5,
+    borderRadius: 2,
   },
-  issuesLoading: {
+  issuesCreatorAvatar: {
+    height: 40,
+    width: 40,
     marginLeft: 10,
-    color: '#FF6600',
+    marginRight: 10,
+    borderRadius:50
   },
-  issuesListView:{
-    color: '#000000',
-    margin: 0,
-    padding: 0,
-    backgroundColor: '#F6F6EF',
+  issuesTitle: {
+    fontSize: 15,
+    textAlign: 'left',
+    marginRight: 10,
+    color: '#FF6600'
   },
-  postDetailsLine: {
+  issuesDetail: {
     fontSize: 12,
-    marginBottom: 10,
+    marginTop: 4,
     color: 'gray',
   },
 });

@@ -4,7 +4,7 @@ var React = require('react-native');
 var { AppRegistry, View, BackAndroid, Navigator, } = React;
 var ProjectList = require('./project/projectList/ProjectList');
 var ProjectProfile = require('./project/projectProfile/ProjectProfile');
-// var IssuesList = require('./issues/issuesList/IssuesList');
+var IssuesList = require('./issues/issuesList/IssuesList');
 
 
 var _navigator;
@@ -38,10 +38,10 @@ var Scenes = React.createClass({
       )
     }
 
-    if (route.id === 'IssuseList') {
+    if (route.id === 'IssuesList') {
       return (
         <View style={{flex: 1}}>
-          <ProjectList nav={navigator} />
+          <IssuesList nav={navigator} />
         </View>
       );
     }
