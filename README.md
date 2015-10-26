@@ -14,7 +14,7 @@ http://share.weiyun.com/719466c354a6a21d17f99eee9df8c08b
 ### 更多内容参考博客：TODO
 
 ## 打包
-安卓版本打包参考：
+安卓版本打包参考：<br>
   [将js代码导成资源](https://github.com/facebook/react-native/issues/2743#issuecomment-140697340)<br>
   [生成签名apk](https://facebook.github.io/react-native/docs/signed-apk-android.html#content)
 
