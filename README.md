@@ -9,6 +9,7 @@ http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
 2. 安装依赖包： `npm install`。目前只用了一个图标库"react-native-icons"。
 3. 根目录执行 `react-native run-android`。
 
-## 更多内容参考博客：http://segmentfault.com/a/1190000003915315#articleHeader5
+## 更多内容参考博客：
+http://segmentfault.com/a/1190000003915315#articleHeader5
 
 ## 雨点儿API: TODO
