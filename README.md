@@ -1,15 +1,22 @@
 # raindrop-app
-基于react-native及雨点儿网的restful接口，做的app。目前只有android版本。所有功能基于RN官方组件实现，纯js实现，没有java代码。
+Mobile app based on the restful API of www.yudianer.com.
+All the features are based on official components. Only Js used, no native code Java.
 
-## Demo展示
+## Demo
 http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
+## Screenshots
 
-## 安装
-1. 准备环境： 参考[官网文档](https://facebook.github.io/react-native/docs/getting-started.html#content)
-2. 安装依赖包： `npm install`。目前只用了一个图标库"react-native-icons"。
+<img src="https://cloud.githubusercontent.com/assets/7335304/10759708/d18f7338-7cf3-11e5-8257-e52dc7088d0b.jpg" height="470"/>
+<img src="https://cloud.githubusercontent.com/assets/7335304/10759707/d18ed6d0-7cf3-11e5-8714-168ebc5a142d.jpg" height="470"/>
+<img src="https://cloud.githubusercontent.com/assets/7335304/10759706/d18df012-7cf3-11e5-99e9-36af81ae81be.jpg" height="470"/>
+
+## Running
+1. setup environment： refering [official docs](https://facebook.github.io/react-native/docs/getting-started.html#content)
+2. install dependence： `npm install`. only one package [react-native-icons](https://github.com/corymsmith/react-native-icons) used.
 3. 根目录执行 `react-native run-android`。
 
-## 更多内容参考博客：
+## For more guide, please refer to my blog：
 http://segmentfault.com/a/1190000003915315#articleHeader5
 
-## 雨点儿API: TODO
+## Introduction of the API of www.yudianer.com:
+TODO
