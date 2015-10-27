@@ -19,4 +19,4 @@ http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
 http://segmentfault.com/a/1190000003915315#articleHeader5
 
 ## Introduction of the API of www.yudianer.com:
-TODO
+Wrapped in src/network/DataService.js
