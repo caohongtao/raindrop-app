@@ -13,7 +13,7 @@ http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
 ## Running
 1. Setup environment： please refer to [official docs](https://facebook.github.io/react-native/docs/getting-started.html#content)
 2. Install dependence： `npm install`. only one package [react-native-icons](https://github.com/corymsmith/react-native-icons) used.
-3. run `react-native run-android`.
+3. Run `react-native run-android`.
 
 ## For more guide, please refer to my blog：
 http://segmentfault.com/a/1190000003915315#articleHeader5
