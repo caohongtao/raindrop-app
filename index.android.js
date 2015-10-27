@@ -9,6 +9,6 @@ var {
   AppRegistry,
 } = React;
 
-var Scenes = require('./src/components/Scenes');
+var Routers = require('./src/components/Routers.android');
 
-AppRegistry.registerComponent('RaindropReactNative', () => Scenes);
+AppRegistry.registerComponent('RaindropReactNative', () => Routers);

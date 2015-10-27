@@ -1,11 +1,12 @@
 'use strict';
 
 var React = require('react-native');
-var { AppRegistry, View, BackAndroid, Navigator, } = React;
-var ProjectList = require('./project/projectList/ProjectList');
-var ProjectProfile = require('./project/projectProfile/ProjectProfile');
-var IssuesList = require('./issues/issuesList/IssuesList');
-
+var { AppRegistry, View, BackAndroid, Navigator, Text } = React;
+var ProjectList = require('./project/projectList/ProjectList.android');
+var ProjectProfile = require('./project/projectProfile/ProjectProfile.android');
+var IssuesList = require('./issues/issuesList/IssuesList.android');
+var IssuesProfile = require('./issues/issuesProfile/IssuesProfile.android');
+var Todo = require('./common/todo/Todo.android');
 
 var _navigator;
 
@@ -17,7 +18,7 @@ BackAndroid.addEventListener('hardwareBackPress', () => {
   return true;
 });
 
-var Scenes = React.createClass({
+var Routers = React.createClass({
   renderScene: function(route, navigator) {
 
     console.info("当前路由：", navigator.getCurrentRoutes());
@@ -46,13 +47,44 @@ var Scenes = React.createClass({
       );
     }
 
-    if (route.id === 'Login') {
+    if (route.id === 'IssuesProfile') {
       return (
         <View style={{flex: 1}}>
-          <ProjectProfile nav={navigator} project={route.project} />
+          <IssuesProfile nav={navigator} />
         </View>
       )
     }
+
+    if (route.id === 'Login') {
+      return (
+        <View style={{flex: 1}}>
+          <Todo nav={navigator}>
+            <Text> 登录尚未实现 </Text>
+          </Todo>
+        </View>
+      )
+    }
+
+    if (route.id === 'Blog') {
+      return (
+        <View style={{flex: 1}}>
+          <Todo nav={navigator}>
+            <Text> 博客尚未做 </Text>
+          </Todo>
+        </View>
+      )
+    }
+
+    if (route.id === 'Setting') {
+      return (
+        <View style={{flex: 1}}>
+          <Todo nav={navigator}>
+            <Text> 没有什么需要设置的。。。issues </Text>
+          </Todo>
+        </View>
+      )
+    }
+
   },
   render: function() {
     return (
@@ -65,4 +97,4 @@ var Scenes = React.createClass({
   },
 });
 
-module.exports = Scenes;
+module.exports = Routers;

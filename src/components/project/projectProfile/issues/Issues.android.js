@@ -4,7 +4,6 @@ var React = require('react-native');
 // var WebIntent = require('react-native-webintent');
 var { Text, View, ListView, TouchableHighlight, } = React;
 var DataService = require('../../../../network/DataService');
-var NavToolbar = require('../../../navigation/navToolBar/NavToolBar')
 var styles = require('./style');
 
 var Issues = React.createClass({
@@ -36,13 +35,23 @@ var Issues = React.createClass({
         style={styles.issuesListView}/>
     );
   },
+
+  selectIssues: function(issues) {
+    this.props.nav.push({
+      id: 'IssuesProfile',
+      issues: issues,
+    });
+  },
+
   renderIssuesCell: function(issues){
     return(
-      <View style={styles.issuesCell}>
-        <Text style={styles.issuesTitle}>
-          {issues.title}
-        </Text>
-      </View>
+      <TouchableHighlight onPress={() => this.selectIssues(issues)}>
+        <View style={styles.issuesCell}>
+          <Text style={styles.issuesTitle}>
+            {issues.title}
+          </Text>
+        </View>
+      </TouchableHighlight>
     );
   },
 });

@@ -3,9 +3,9 @@
 var React = require('react-native');
 var { Text, View, ListView, } = React;
 var DataService = require('../../../network/DataService');
-var NavTab = require('../../navigation/navTab/NavTab');
-var NavToolbar = require('../../navigation/navToolBar/NavToolBar');
-var ProjectCell = require('./projectCell/ProjectCell');
+var NavTab = require('../../navigation/navTab/NavTab.android');
+var NavToolbar = require('../../navigation/navToolBar/NavToolBar.android');
+var ProjectCell = require('./projectCell/ProjectCell.android');
 var styles = require("./style");
 
 var ProjectList = React.createClass({

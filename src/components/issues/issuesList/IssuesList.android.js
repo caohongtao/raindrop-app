@@ -4,8 +4,8 @@ var React = require('react-native');
 // var WebIntent = require('react-native-webintent');
 var { Text, View, ListView, TouchableHighlight, Image, } = React;
 var DataService = require('../../../network/DataService');
-var NavTab = require('../../navigation/navTab/NavTab');
-var NavToolbar = require('../../navigation/navToolBar/NavToolBar');
+var NavTab = require('../../navigation/navTab/NavTab.android');
+var NavToolbar = require('../../navigation/navToolBar/NavToolBar.android');
 var styles = require('./style');
 
 var IssuesList = React.createClass({
@@ -56,25 +56,34 @@ var IssuesList = React.createClass({
     );
   },
 
+  selectIssues: function(issues) {
+    this.props.nav.push({
+      id: 'IssuesProfile',
+      issues: issues,
+    });
+  },
+
   renderIssuesCell: function(issues){
     return(
-      <View style={styles.issuesCell}>
-        <Image
-          source={{uri: issues.creator.avatar}}
-          style={styles.issuesCreatorAvatar}
-        />
-        <View style={{flex:1}}>
-          <Text style={styles.issuesTitle}>
-            {issues.title}
-          </Text>
-          <Text style={styles.issuesDetail}>
-            <Text style={{color: '#4E8EF7'}}> {issues.creator.username} </Text> 创建于{issues.create_date}
-          </Text>
-          <Text style={styles.issuesDetail}>
-            所属项目<Text style={{color: '#4E8EF7'}}> {issues.belongsTo.name} </Text> | {issues.views} 浏览 | {issues.points} 讨论
-          </Text>
+      <TouchableHighlight onPress={() => this.selectIssues(issues)}>
+        <View style={styles.issuesCell}>
+          <Image
+            source={{uri: issues.creator.avatar}}
+            style={styles.issuesCreatorAvatar}
+          />
+          <View style={{flex:1}}>
+            <Text style={styles.issuesTitle}>
+              {issues.title}
+            </Text>
+            <Text style={styles.issuesDetail}>
+              <Text style={{color: '#4E8EF7'}}> {issues.creator.username} </Text> 创建于{issues.create_date}
+            </Text>
+            <Text style={styles.issuesDetail}>
+              所属项目<Text style={{color: '#4E8EF7'}}> {issues.belongsTo.name} </Text> | {issues.views} 浏览 | {issues.points} 讨论
+            </Text>
+          </View>
         </View>
-      </View>
+      </TouchableHighlight>
     );
   },
 
