@@ -1,6 +1,6 @@
 # raindrop-app
 Mobile app based on the restful API of www.yudianer.com.
-All the features are based on official components. Only Js used, no native code Java.
+All the features are based on official components. Only Js used, no native Java code.
 
 ## Demo
 http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
