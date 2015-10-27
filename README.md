@@ -6,9 +6,9 @@ All the features are based on official components. Only Js used, no native Java 
 http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
 ## Screenshots
 
-<img src="https://cloud.githubusercontent.com/assets/7335304/10759708/d18f7338-7cf3-11e5-8257-e52dc7088d0b.jpg" height="470"/>
-<img src="https://cloud.githubusercontent.com/assets/7335304/10759707/d18ed6d0-7cf3-11e5-8714-168ebc5a142d.jpg" height="470"/>
-<img src="https://cloud.githubusercontent.com/assets/7335304/10759706/d18df012-7cf3-11e5-99e9-36af81ae81be.jpg" height="470"/>
+<img src="https://cloud.githubusercontent.com/assets/7335304/10759708/d18f7338-7cf3-11e5-8257-e52dc7088d0b.jpg" height="400"/>
+<img src="https://cloud.githubusercontent.com/assets/7335304/10759707/d18ed6d0-7cf3-11e5-8714-168ebc5a142d.jpg" height="400"/>
+<img src="https://cloud.githubusercontent.com/assets/7335304/10759706/d18df012-7cf3-11e5-99e9-36af81ae81be.jpg" height="400"/>
 
 ## Running
 1. Prepare environment： please refer to [official docs](https://facebook.github.io/react-native/docs/getting-started.html#content)
