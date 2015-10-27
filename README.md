@@ -7,16 +7,9 @@ http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
 ## 安装
 1. 准备环境： 参考[官网文档](https://facebook.github.io/react-native/docs/getting-started.html#content)
 2. 安装依赖包： `npm install`。目前只用了一个图标库"react-native-icons"。
-3. run `react-native run-android`。
+3. 根目录执行 `react-native run-android`。
 
-## 二次开发
-### 目录结构
-### 更多内容参考博客：TODO
-
-## 打包
-安卓版本打包参考：<br>
-  [将js代码导成资源](https://github.com/facebook/react-native/issues/2743#issuecomment-140697340)<br>
-  [生成签名apk](https://facebook.github.io/react-native/docs/signed-apk-android.html#content)
+## 更多内容参考博客：TODO
 
 ## 雨点儿API
 ### TODO
