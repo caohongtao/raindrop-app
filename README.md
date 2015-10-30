@@ -16,7 +16,9 @@ http://share.weiyun.com/bbf67609eef2f58b87ca79ce0cbf185b
 3. Run `react-native run-android`.
 
 ## For more guide
-Please refer to my blog：http://segmentfault.com/a/1190000003915315#articleHeader5
+Please refer to my blog：
+1. http://segmentfault.com/a/1190000003915315
+2. http://segmentfault.com/a/1190000003931440
 
 ## Introduction of the API of www.yudianer.com:
 Wrapped in [DataService.js](https://github.com/caohongtao/raindrop-app/blob/master/src/network/DataService.js)
