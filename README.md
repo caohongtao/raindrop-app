@@ -1,5 +1,5 @@
 # raindrop-app
-Mobile app based on the restful API of www.yudianer.com.
+Reference react-native app based on the restful API of www.yudianer.com.
 All the features are based on official components. Only Js used, no native Java code.
 
 ## Demo
@@ -20,5 +20,5 @@ Please refer to my blog：<br>
 1. http://segmentfault.com/a/1190000003915315<br>
 2. http://segmentfault.com/a/1190000003931440
 
-## Introduction of the API of www.yudianer.com:
+## API of www.yudianer.com:
 Wrapped in [DataService.js](https://github.com/caohongtao/raindrop-app/blob/master/src/network/DataService.js)
